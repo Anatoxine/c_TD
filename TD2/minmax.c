@@ -1,7 +1,11 @@
 #include <stdio.h>
 
 int main(){
-    maximum(4, 2);
+    
+    int x, y;
+    f(12, 4, &x, &y);
+    printf("x = %d, y = %d\n", x, y);
+
 }
 
 int maximum(int *t, int n){
@@ -17,4 +21,9 @@ int maximum(int *t, int n){
     }
 
     printf("valeur maximale: %i\n", max);
+}
+
+void f(int a, int b, int *s, int *p) {
+    *s = a + b;
+    *p = a * b;
 }
