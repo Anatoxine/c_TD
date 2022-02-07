@@ -1,29 +1,46 @@
 #include <stdio.h>
 
 int main(){
-    
-    int x, y;
-    f(12, 4, &x, &y);
-    printf("x = %d, y = %d\n", x, y);
+
+    int t[10]={1,45,3,4,5,6,7,8,-2,10};
+    int min, max;
+    minmax(t,10,&min,&max);
+    printf("min: %i,max %i",min, max);
 
 }
 
 int maximum(int *t, int n){
-    int tab[n];
-    t=&tab;
     
-    int max=tab[0];
+    int max=t[0];
 
     for(int i=1;i<n;i++){
-        if(max<tab[i]){
-            max=tab[i];
+        if(max<t[i]){
+            max=t[i];
         }
     }
 
-    printf("valeur maximale: %i\n", max);
+    return max;
+}
+int minimum(int *t, int n){
+    
+    int min=t[0];
+
+    for(int i=1;i<n;i++){
+        if(min>t[i]){
+            min=t[i];
+        }
+    }
+
+    return min;
 }
 
 void f(int a, int b, int *s, int *p) {
     *s = a + b;
     *p = a * b;
+}
+
+void minmax(int *t, int n, int *pmin, int *pmax){
+    *pmin=minimum(t,n);
+    *pmax=maximum(t,n);
+    
 }
