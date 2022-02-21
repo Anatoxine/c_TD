@@ -39,4 +39,5 @@ int main() {
     b = malloc(sizeof(char) * 11);
     int fd = open("./message.txt", O_RDONLY);
     lireligne(fd,b,100);
+    
 }
